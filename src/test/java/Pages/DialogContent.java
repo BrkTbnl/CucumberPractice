@@ -4,12 +4,9 @@ import Utilities.GWD;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
 
-public class DialogContent {
+public class DialogContent extends Parent {
     public DialogContent() {
         PageFactory.initElements(GWD.getDriver(),this);
     }
@@ -23,20 +20,22 @@ public class DialogContent {
     @FindBy(xpath = "//button[@class=\"oxd-button oxd-button--medium oxd-button--main orangehrm-login-button\"]")
     public WebElement loginButton;
 
-    public void Click(WebElement element){
+    @FindBy(xpath = "//*[contains(@class, 'oxd-text oxd-text--h6 oxd-topbar-header-breadcrumb-module')]")
+    public WebElement LoginCheck;
 
-        WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(5));
-        wait.until(ExpectedConditions.elementToBeClickable(element));
-        //scrol
-        element.click();
-    }
+    @FindBy(xpath = "//*[contains(text(), \"Add\")]")
+    public WebElement addButton;
 
-    public void SendKeys(WebElement element, String typo){
+    @FindBy(css = "[placeholder=\"First Name\"]")
+    public WebElement nameInput;
 
-        WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(5));
-        wait.until(ExpectedConditions.visibilityOf(element));
-        //scrol
-        element.clear();
-        element.sendKeys(typo);
-    }
+    @FindBy(css = "[placeholder = \"Last Name\"]")
+    public WebElement lastNameInput;
+
+    @FindBy(xpath = "//button[@class=\"oxd-button oxd-button--medium oxd-button--secondary orangehrm-left-space\"]")
+    public WebElement saveButton;
+
+    @FindBy(xpath = "//div[@class=\"orangehrm-edit-employee-name\"]")
+    public WebElement employeeName;
+
 }

@@ -1,6 +1,7 @@
 package Utilities;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.time.Duration;
@@ -13,7 +14,7 @@ public class GWD {
     public static WebDriver getDriver() {
         //if driver empty it needs to work
         if (driver == null) {
-            driver = new FirefoxDriver();
+            driver = new ChromeDriver();
             driver.manage().window().maximize();
             driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
         }

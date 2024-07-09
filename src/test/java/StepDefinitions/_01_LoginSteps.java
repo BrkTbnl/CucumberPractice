@@ -17,13 +17,14 @@ public class _01_LoginSteps {
     @When("Enter username and password and click login button")
     public void enterUsernameAndPasswordAndClickLoginButton() {
 
-        dc.SendKeys(dc.username,"Admin");
-        dc.SendKeys(dc.password,"admin123");
-        dc.Click(dc.loginButton);
+        dc.mySendKeys(dc.username,"Admin");
+        dc.mySendKeys(dc.password,"admin123");
+        dc.myClick(dc.loginButton);
 
     }
 
     @Then("User should login successfully")
     public void userShouldLoginSuccessfully() {
+        dc.verifyContainsText(dc.LoginCheck,"Dashboard");
     }
 }
