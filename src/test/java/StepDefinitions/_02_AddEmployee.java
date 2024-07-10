@@ -20,12 +20,22 @@ public class _02_AddEmployee {
     public void createANewEmployee() {
         dc.myClick(dc.addButton);
         dc.mySendKeys(dc.nameInput,"Burak");
-        dc.mySendKeys(dc.lastNameInput,"Tarik4");
+        dc.mySendKeys(dc.lastNameInput,"Tarik5");
         dc.myClick(dc.saveButton);
     }
 
     @Then("Success message should be displayed")
     public void successMessageShouldBeDisplayed() {
-        dc.verifyContainsText(dc.employeeName,"Burak Tarik");
+        dc.verifyContainsText(dc.SuccessCheck,"Success");
+    }
+
+    @When("Create a new employee FirstName as {string} LastName as {string}")
+    public void createANewEmployeeFirstNameAsLastNameAs(String name, String lastName) {
+
+        dc.myClick(dc.addButton);
+        dc.mySendKeys(dc.nameInput,name);
+        dc.mySendKeys(dc.lastNameInput,lastName);
+        dc.myClick(dc.saveButton);
+
     }
 }
