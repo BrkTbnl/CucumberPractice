@@ -38,14 +38,15 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//p[@class='oxd-text oxd-text--p oxd-text--toast-title oxd-toast-content-text' and text()='Success']\n")
     public WebElement SuccessCheck;
 
-    @FindBy(xpath = "//div[@class=\"oxd-select-wrapper\"]")
-    public WebElement VacancySelectButton;
+    @FindBy(xpath = "//p[@class='oxd-text oxd-text--p oxd-text--toast-title oxd-toast-content-text' and text()='Already Exist']\n")
+    public WebElement errorCheck;
 
     @FindBy(xpath = "(//*[@placeholder = \"Type here\"])[1]")
     public WebElement emailInput;
 
     @FindBy(xpath = "//button[@class=\"oxd-button oxd-button--medium oxd-button--secondary\"]")
     public WebElement AddButtonNew;
+
 
 
 
