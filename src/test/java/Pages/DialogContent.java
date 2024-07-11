@@ -71,22 +71,14 @@ public class DialogContent extends Parent {
         wait.until(ExpectedConditions.elementToBeClickable(deleteButton));
         myClick(deleteButton);
         myClick(deleteDialogButton);
-
-
-
     }
 
+    public WebElement getWebElement(String strElement){
+        switch (strElement){
+            case "add": return this.addButton;
 
-
-
-
-
-
-
-
-
-
-
-
+        }
+        return null;
+    }
 
 }

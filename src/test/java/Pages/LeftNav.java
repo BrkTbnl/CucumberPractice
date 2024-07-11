@@ -17,6 +17,12 @@ public class LeftNav extends Parent{
     public WebElement Recruitment;
 
 
+    public WebElement getWebElement(String strElement){
 
+        switch (strElement){
+            case "pim": return this.PIM;
+        }
+        return null;
+    }
 
 }
