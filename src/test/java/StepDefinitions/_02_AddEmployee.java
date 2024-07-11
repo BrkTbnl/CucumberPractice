@@ -38,4 +38,9 @@ public class _02_AddEmployee {
         dc.myClick(dc.saveButton);
 
     }
+
+    @And("User Delete the {string}")
+    public void userDeleteThe(String name) {
+        dc.deleteItem(name);
+    }
 }

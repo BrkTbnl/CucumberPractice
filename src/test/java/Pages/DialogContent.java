@@ -1,9 +1,11 @@
 package Pages;
 
 import Utilities.GWD;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 
 public class DialogContent extends Parent {
@@ -47,6 +49,32 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//button[@class=\"oxd-button oxd-button--medium oxd-button--secondary\"]")
     public WebElement AddButtonNew;
 
+    @FindBy(xpath = "(//input[contains(@placeholder, \"Type for hints\")])[1]")
+    public WebElement searchInput;
+
+    @FindBy(xpath = "(//div[@class=\"oxd-form-actions\"]/button)[2]")
+    public WebElement searchButton;
+
+    @FindBy(xpath = "(//div[@class=\"orangehrm-paper-container\"]/div)[2]/div/span")
+    public WebElement foundBy;
+
+    @FindBy(xpath = "(//i[@class=\"oxd-icon bi-trash\"])[1]")
+    public WebElement deleteButton;
+
+    @FindBy(xpath = "//i[@class=\"oxd-icon bi-trash oxd-button-icon\"]")
+    public WebElement deleteDialogButton;
+
+
+    public void deleteItem(String searchText){
+        mySendKeys(searchInput, searchText);
+        myClick(searchButton);
+        wait.until(ExpectedConditions.elementToBeClickable(deleteButton));
+        myClick(deleteButton);
+        myClick(deleteDialogButton);
+
+
+
+    }
 
 
 

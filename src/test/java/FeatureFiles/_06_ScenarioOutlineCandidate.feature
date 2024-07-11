@@ -15,6 +15,7 @@ Feature: Candidate Functionality Negative
 
     When Create a new candidate name as "<name>" lastName as "<lastName>" and mail as "<mail>"
     Then Success message should be displayed
+
     Examples:
       | name    | lastName | mail              |
       | asdasd  | asdasd   | asdasd@gmail.com  |
