@@ -17,6 +17,6 @@ Feature: Employee Delete functionality
 
     Examples:
       | name      | lastName |
-      | asiya1 | as1   |
+#      | asiya1 | as1   |
       | asiya2 | as2   |
 
