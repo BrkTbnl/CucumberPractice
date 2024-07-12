@@ -21,6 +21,7 @@ public class LeftNav extends Parent{
 
         switch (strElement){
             case "pim": return this.PIM;
+            case "recruitment": return this.Recruitment;
         }
         return null;
     }

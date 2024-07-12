@@ -16,6 +16,7 @@ public class Parent {
 
     public void myClick(WebElement element){
 
+
         wait.until(ExpectedConditions.elementToBeClickable(element));
         scrollToElement(element);
         element.click();

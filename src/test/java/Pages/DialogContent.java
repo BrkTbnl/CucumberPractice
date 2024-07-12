@@ -47,7 +47,7 @@ public class DialogContent extends Parent {
     public WebElement emailInput;
 
     @FindBy(xpath = "//button[@class=\"oxd-button oxd-button--medium oxd-button--secondary\"]")
-    public WebElement AddButtonNew;
+    public WebElement addButtonCandidate;
 
     @FindBy(xpath = "(//input[contains(@placeholder, \"Type for hints\")])[1]")
     public WebElement searchInput;
@@ -64,11 +64,14 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//i[@class=\"oxd-icon bi-trash oxd-button-icon\"]")
     public WebElement deleteDialogButton;
 
+    @FindBy(xpath = "//div[@class='oxd-form-loader']")
+    public WebElement loader;
+
 
     public void deleteItem(String searchText){
         mySendKeys(searchInput, searchText);
         myClick(searchButton);
-        wait.until(ExpectedConditions.elementToBeClickable(deleteButton));
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//div[@class='oxd-form-loader']")));
         myClick(deleteButton);
         myClick(deleteDialogButton);
     }
@@ -76,6 +79,11 @@ public class DialogContent extends Parent {
     public WebElement getWebElement(String strElement){
         switch (strElement){
             case "add": return this.addButton;
+            case "addCandidate": return this.addButtonCandidate;
+            case "nameInput": return this.nameInput;
+            case "lastNameInput": return this.lastNameInput;
+            case "saveButton": return this.saveButton;
+            case"emailInput": return this.emailInput;
 
         }
         return null;

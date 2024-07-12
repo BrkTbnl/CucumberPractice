@@ -18,7 +18,7 @@ public class _04_AddCandidateSteps {
 
     @When("Create a new candidate")
     public void createANewCandidate() {
-        dc.myClick(dc.AddButtonNew);
+        dc.myClick(dc.addButtonCandidate);
         dc.mySendKeys(dc.nameInput,"Kurt");
         dc.mySendKeys(dc.lastNameInput,"Cobain");
         dc.mySendKeys(dc.emailInput,"test1test@gmail.com");
@@ -27,7 +27,7 @@ public class _04_AddCandidateSteps {
 
     @When("Create a new candidate name as {string} lastName as {string} and mail as {string}")
     public void createANewCandidateNameAsLastNameAsAndMailAs(String arg1, String arg2, String arg3) {
-        dc.myClick(dc.AddButtonNew);
+        dc.myClick(dc.addButtonCandidate);
         dc.mySendKeys(dc.nameInput,arg1);
         dc.mySendKeys(dc.lastNameInput,arg2);
         dc.mySendKeys(dc.emailInput,arg3);
