@@ -1,5 +1,5 @@
 Feature: Candidate Functionality
-
+  @SmokeTest
   Scenario: Create a Candidate
     Given Navigate To page
     When Enter username and password and click login button
