@@ -13,6 +13,7 @@ import java.time.Duration;
 
 public class Parent {
     WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(10));
+    public JavascriptExecutor js = (JavascriptExecutor) GWD.getDriver();
 
     public void myClick(WebElement element){
 
@@ -46,6 +47,12 @@ public class Parent {
     public void selectBox(WebElement element, String value){
         Select select = new Select(element);
         select.selectByValue(value);
+    }
+
+    public void myJsClick(WebElement element) {
+        wait.until(ExpectedConditions.elementToBeClickable(element));
+        scrollToElement(element);
+        js.executeScript("arguments[0].click();", element);
     }
 
 }
