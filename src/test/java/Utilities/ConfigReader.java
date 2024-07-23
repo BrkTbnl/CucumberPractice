@@ -14,9 +14,9 @@ public class ConfigReader {
 
     }
 
-    public static String getUrl() throws IOException {
+    public static String getDbUrl() throws IOException {
 
-        return getPropertyObject().getProperty("url");
+        return getPropertyObject().getProperty("DbUrl");
     }
 
     public static String getUsername() throws IOException {
