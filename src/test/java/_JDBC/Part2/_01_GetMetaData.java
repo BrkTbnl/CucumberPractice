@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 
-public class _01_GetAllRowColumn extends JDBCParent {
+public class _01_GetMetaData extends JDBCParent {
 
     @Test
     public void test1() throws SQLException {
