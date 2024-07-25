@@ -103,4 +103,35 @@ public class _01_GetAllRowColumn extends JDBCParent {
         }
 
     }
+
+    @Test
+    public void test04_2() throws SQLException {
+        /*
+        Print the contents of all rows and columns in the Language table as in the table.
+         */
+
+        ResultSet rs = statement.executeQuery("select * from language");
+
+        int columnCount = rs.getMetaData().getColumnCount();
+
+        for (int i = 1; i <= columnCount; i++) {
+            System.out.printf("%-20s",rs.getMetaData().getColumnName(i) + "\t");
+        }
+
+        System.out.println();
+
+        while (rs.next()){
+            for (int i = 1; i <= columnCount; i++) {
+                System.out.printf("%-20s",rs.getString(i)+ "\t");
+            }
+            System.out.println();
+        }
+        /*
+         % : points to the value of the variable
+         - : prints left aligned, default right aligned
+         20: how many digits will be used each time its information
+         s: is used for string values, d is used for numeric values
+         "%5.2f" : use 5 digits for number, 2 digits for decimal part-
+         */
+    }
 }
