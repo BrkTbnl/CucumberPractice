@@ -78,4 +78,29 @@ public class _01_GetAllRowColumn extends JDBCParent {
             resultTable.next();
         }
     }
+
+    @Test
+    public void test04() throws SQLException {
+        /*
+        Print the contents of all rows and columns in the Language table as in the table.
+         */
+
+        ResultSet rs = statement.executeQuery("select * from language");
+
+        int columnCount = rs.getMetaData().getColumnCount();
+
+        for (int i = 1; i <= columnCount; i++) {
+            System.out.print(rs.getMetaData().getColumnName(i) + "\t");
+        }
+
+        System.out.println();
+
+        while (rs.next()){
+            for (int i = 1; i <= columnCount; i++) {
+                System.out.print(rs.getString(i)+ "\t");
+            }
+            System.out.println();
+        }
+
+    }
 }
