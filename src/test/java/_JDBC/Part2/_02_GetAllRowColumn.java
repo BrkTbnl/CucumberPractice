@@ -12,7 +12,7 @@ import java.util.List;
 public class _02_GetAllRowColumn extends JDBCParent {
 
     @Test
-    public void test1() throws SQLException {
+    public void test1() {
 
         String sql = "select * from language";
         List<List<String>> returningList = getDataList(sql);
@@ -28,7 +28,7 @@ public class _02_GetAllRowColumn extends JDBCParent {
     }
 
     public List<List<String>> getDataList(String sql) {
-        List<List<String>> table = new ArrayList<List<String>>();
+        List<List<String>> table = new ArrayList<>();
 
         try {
             ResultSet rs = statement.executeQuery(sql);
