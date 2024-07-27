@@ -46,14 +46,14 @@ Follow these steps to enable parallel execution:
         <test name="test1">
             <parameter name="browserType" value="BrowserName"></parameter>
                 <classes>
-                <class name="Runners.Test"></class>
+                <class name="Runners.testName"></class>
                 </classes>
             </test>
             
         <test name="test2">
             <parameter name="browserType" value="BrowserName"></parameter>
                 <classes>
-                <class name="Runners.Test1"></class>
+                <class name="Runners.testName"></class>
                 </classes>
 
             </test>
