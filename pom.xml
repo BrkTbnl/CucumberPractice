@@ -96,7 +96,35 @@
             <version>8.0.18</version>
         </dependency>
 
-
     </dependencies>
+
+    <!-- for jenkins   -->
+        <build>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>3.0.0-M1</version>
+                    <configuration>
+
+                        <!--                    <suiteXmlFiles>-->
+                        <!--                        <suiteXmlFile>src/test/java/xml/RegressionTest.xml</suiteXmlFile>-->
+                        <!--                    </suiteXmlFiles>-->
+
+                        <includes>
+                            <!-- for  run class or classes  **/:Can find its location by all folders  -->
+                            <include>**/_05_TestRunnerSmokeWithPlugin.java</include>
+                        </includes>
+
+                    </configuration>
+                </plugin>
+            </plugins>
+        </build>
+
+
+
+
+
+
 
 </project>
