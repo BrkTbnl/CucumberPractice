@@ -113,7 +113,7 @@
 
                         <includes>
                             <!-- for  run class or classes  **/:Can find its location by all folders  -->
-                            <include>**/_05_TestRunnerSmokeWithPlugin.java</include>
+                            <include>**/_04_SmokeTest.java</include>
                         </includes>
 
                     </configuration>
