@@ -6,6 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 
 import java.time.Duration;
 import java.util.Locale;
@@ -37,7 +38,14 @@ public class GWD {
                     threadDriver.set(new ChromeDriver());
                     break;
                 default:
-                    //for jenkins
+                    if (isRunningOnJenkins()) {
+                        FirefoxOptions fOptions = new FirefoxOptions();
+                        fOptions.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=1400,2400");
+                        threadDriver.set(new FirefoxDriver(fOptions));
+                    } else {
+                        threadDriver.set(new FirefoxDriver());
+                    }
+
                     /**
                      For Chrome
                      ChromeOptions options = new ChromeOptions();
@@ -45,13 +53,12 @@ public class GWD {
                      threadDriver.set(new ChromeDriver(options));
                      */
 
-                     //For Edge
+                    /**
+                     For Edge
                      EdgeOptions eOptions = new EdgeOptions();
                      eOptions.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=1400,2400");
                      threadDriver.set(new EdgeDriver(eOptions));
-
-                    threadDriver.set(new FirefoxDriver());
-
+                     */
             }
         }
 
@@ -78,9 +85,12 @@ public class GWD {
 
             threadDriver.set(driver);
         }
-
     }
 
+    public static boolean isRunningOnJenkins() {
+        String jenkinsHome = System.getenv("JENKINS_HOME");
+        return jenkinsHome != null && !jenkinsHome.isEmpty();
+    }
 }
 
 
