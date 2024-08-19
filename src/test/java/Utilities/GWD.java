@@ -40,9 +40,9 @@ public class GWD {
                     break;
                 default:
                     if (isRunningOnJenkins()) {
-                        ChromeOptions options = new ChromeOptions();
-                        options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=1400,2400");
-                        threadDriver.set(new ChromeDriver(options));
+                        EdgeOptions eOptions = new EdgeOptions();
+                        eOptions.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=1400,2400");
+                        threadDriver.set(new EdgeDriver(eOptions));
                     } else {
                         threadDriver.set(new FirefoxDriver());
                     }
