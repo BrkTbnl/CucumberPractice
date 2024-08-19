@@ -1,6 +1,6 @@
 Feature: ApachePOI New Employee Functionality
 
-  @SmokeTest
+
   Scenario: Create new employee from Excel
     Given Navigate To page
     When Enter username and password and click login button
