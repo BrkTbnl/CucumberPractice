@@ -40,9 +40,9 @@ public class GWD {
                     break;
                 default:
                     if (isRunningOnJenkins()) {
-                        EdgeOptions eOptions = new EdgeOptions();
-                        eOptions.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=1400,2400");
-                        threadDriver.set(new EdgeDriver(eOptions));
+                        FirefoxOptions fOptions = new FirefoxOptions();
+                        fOptions.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=1400,2400");
+                        threadDriver.set(new FirefoxDriver(fOptions));
                     } else {
                         threadDriver.set(new FirefoxDriver());
                     }
