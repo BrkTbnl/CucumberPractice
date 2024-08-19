@@ -4,6 +4,7 @@ package Utilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.time.Duration;
@@ -36,6 +37,19 @@ public class GWD {
                     threadDriver.set(new ChromeDriver());
                     break;
                 default:
+                    //for jenkins
+                    /**
+                     For Chrome
+                     ChromeOptions options = new ChromeOptions();
+                     options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=1400,2400");
+                     threadDriver.set(new ChromeDriver(options));
+                     */
+
+                     //For Edge
+                     EdgeOptions eOptions = new EdgeOptions();
+                     eOptions.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=1400,2400");
+                     threadDriver.set(new EdgeDriver(eOptions));
+
                     threadDriver.set(new FirefoxDriver());
 
             }
