@@ -1,5 +1,5 @@
 Feature: Add employee Functionality
-
+  @SmokeTest
   Scenario: Create a new employee
     Given Navigate To page
     And Enter username and password and click login button
