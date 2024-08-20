@@ -1,5 +1,6 @@
 Feature: Login Functionality
 
+  @RegressionTest
   @SmokeTest
   Scenario: Login with valid username and password
 
